@@ -5,3 +5,5 @@
 
 ## Projects
 - [instatus-cli](https://github.com/auguwu/instatus-cli)
+- [ume](https://github.com/auguwu/ume)
+- [tsubaki](https://github.com/arisuland/tsubaki)
