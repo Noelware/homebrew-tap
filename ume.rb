@@ -5,20 +5,20 @@
 class Ume < Formula
   desc "Easy, self-hostable, and flexible image and file host, made in Go using MongoDB GridFS."
   homepage "https://github.com/auguwu/ume"
-  version "3.2.1"
+  version "3.2.2"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/auguwu/ume/releases/download/3.2.1/ume_3.2.1_Darwin_arm64.tar.gz"
-      sha256 "51d68e97f18b73ae20c1aa609b158b3e4c9c64e37a1ec99c2217df2a54d33184"
+    if Hardware::CPU.intel?
+      url "https://github.com/auguwu/ume/releases/download/3.2.2/ume_3.2.2_Darwin_x86_64.tar.gz"
+      sha256 "abe85d71efb3268943fdd96801794c9eaa76c5fa4b68ecde7fee72c36a5174fa"
 
       def install
         bin.install "ume"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/auguwu/ume/releases/download/3.2.1/ume_3.2.1_Darwin_x86_64.tar.gz"
-      sha256 "fba2dcc16e0978871dd9ab469618b03503aee423d45da36672d739ad03e722e1"
+    if Hardware::CPU.arm?
+      url "https://github.com/auguwu/ume/releases/download/3.2.2/ume_3.2.2_Darwin_arm64.tar.gz"
+      sha256 "18885b62b238a407607bfead682dce47bbb67396c0b56073ade6c2f7caa36f85"
 
       def install
         bin.install "ume"
@@ -27,25 +27,25 @@ class Ume < Formula
   end
 
   on_linux do
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/auguwu/ume/releases/download/3.2.2/ume_3.2.2_linux_armv6.tar.gz"
+      sha256 "a9c513078af733d948239c0999624a14055c191ed0396a5336d29566e3a0868a"
+
+      def install
+        bin.install "ume"
+      end
+    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/auguwu/ume/releases/download/3.2.1/ume_3.2.1_linux_arm64.tar.gz"
-      sha256 "b9e4a112bb44c19b0a626e889f429d6b418a3213493681585a88a2f41126a91c"
+      url "https://github.com/auguwu/ume/releases/download/3.2.2/ume_3.2.2_linux_arm64.tar.gz"
+      sha256 "27047702420127266d2a4d6540b35b85ec59e887d2955196cc6fd9d225ab32c4"
 
       def install
         bin.install "ume"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/auguwu/ume/releases/download/3.2.1/ume_3.2.1_linux_x86_64.tar.gz"
-      sha256 "971d1929d5b662852fab99d1657733c8d663083349f131f786ff1235577996f9"
-
-      def install
-        bin.install "ume"
-      end
-    end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/auguwu/ume/releases/download/3.2.1/ume_3.2.1_linux_armv6.tar.gz"
-      sha256 "0d18708418507a24f29c456e1967d05d6b549eda5b959926e54dafeea9c7800b"
+      url "https://github.com/auguwu/ume/releases/download/3.2.2/ume_3.2.2_linux_x86_64.tar.gz"
+      sha256 "a1bb9c01910d159449142546c85424e42709964e720923ae23624f1acca681e5"
 
       def install
         bin.install "ume"
