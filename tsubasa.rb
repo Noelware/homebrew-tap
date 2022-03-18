@@ -5,20 +5,20 @@
 class Tsubasa < Formula
   desc "Tiny, and simple Elasticsearch microservice to abstract searching objects!"
   homepage ""
-  version "0.3.0"
+  version "0.3.1"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/auguwu/tsubasa/releases/download/v0.3.0/tsubasa_0.3.0_Darwin_arm64.tar.gz"
-      sha256 "8444fb1ad643ab3b6b32c0a0757f28f19de84ddab8fde6c4cb0b04ff19fc925b"
+      url "https://github.com/auguwu/tsubasa/releases/download/v0.3.1/tsubasa_0.3.1_Darwin_arm64.tar.gz"
+      sha256 "09e4290e4b92989b4e14ebcb9c5d058ca8f135ddedea0732f7b4d7ca3711ac72"
 
       def install
         bin.install "tsubasa"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/auguwu/tsubasa/releases/download/v0.3.0/tsubasa_0.3.0_Darwin_x86_64.tar.gz"
-      sha256 "cb3176c6d3477f0e80942d09a5bf7f4a6acc1900906645bdabd8239f7b5d7f97"
+      url "https://github.com/auguwu/tsubasa/releases/download/v0.3.1/tsubasa_0.3.1_Darwin_x86_64.tar.gz"
+      sha256 "67f66aba36ce384b91770aced5b6531356191e4ec227b7f0df66cf98f9b1672f"
 
       def install
         bin.install "tsubasa"
@@ -27,25 +27,25 @@ class Tsubasa < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/auguwu/tsubasa/releases/download/v0.3.0/tsubasa_0.3.0_linux_armv6.tar.gz"
-      sha256 "1592cd2ddf4dd0d58f41c0a8eea4af33f3fd4332e1550c5d9e61a166820bd843"
-
-      def install
-        bin.install "tsubasa"
-      end
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/auguwu/tsubasa/releases/download/v0.3.0/tsubasa_0.3.0_linux_arm64.tar.gz"
-      sha256 "2c1c493102c185edb5dc9521c81e18171338781bfb0b7a29b88746a7b3cbe62d"
+      url "https://github.com/auguwu/tsubasa/releases/download/v0.3.1/tsubasa_0.3.1_linux_arm64.tar.gz"
+      sha256 "392075c7275dfe9f4c47a62299004575d2d9ab0f2a7d3977a2d09bd6eef94238"
 
       def install
         bin.install "tsubasa"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/auguwu/tsubasa/releases/download/v0.3.0/tsubasa_0.3.0_linux_x86_64.tar.gz"
-      sha256 "cb2463811aa825fc525650338ec831f9cc2cb43a2a0a10c9006340d85297ebd9"
+      url "https://github.com/auguwu/tsubasa/releases/download/v0.3.1/tsubasa_0.3.1_linux_x86_64.tar.gz"
+      sha256 "c2e7616d8650f825ab07d647a87979e9c7c4570f64f02a13d07b1affad72168f"
+
+      def install
+        bin.install "tsubasa"
+      end
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/auguwu/tsubasa/releases/download/v0.3.1/tsubasa_0.3.1_linux_armv6.tar.gz"
+      sha256 "5c539c0a3bf57b6eed8590a6e1d647eadafc080e8c1b4bd5216b7dd6c297a2aa"
 
       def install
         bin.install "tsubasa"
